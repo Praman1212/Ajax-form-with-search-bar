@@ -1,0 +1,207 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.line{
+   border: 1px sienna lightblue ;
+   width: 60%;
+
+}
+.side-bar-heading{
+    padding-bottom: 25px;
+
+}
+
+/*  <=================== index page ==============>  */  
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
+.flex-link-1{
+    height: 100vh;
+    width: 15%;
+    background: rgb(21, 39, 97);
+}
+.flex-link-2{
+    height: 100vh;
+    width: 85%;
+}
+.container-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+/*  <=================== end index page ==============>  */ 
+
+
+
+/*  <=================== sidebar page ==============>  */ 
+
+.side-bar{
+    text-align: center;
+}
+
+.side-bar-links{
+    margin: 20px;
+}
+.side-bar-links a{
+    text-decoration: none;
+    color: white;
+}
+
+/*  <=================== end sidebar page ==============>  */ 
+
+
+/*  <=================== body page ==============>  */ 
+.container-add-button{
+    margin: 20px;
+    margin-left: 50px;        
+}
+.container-add-button a{   
+    padding: 10px;
+    background-color: rgb(21, 151, 4);
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 8%;
+}
+.container-add-button a:hover{
+    background-color: rgb(21, 151, 4);
+    padding: 15px;
+    
+}
+.container-body-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+table{
+    margin: 15px;
+    background: rgb(3, 1, 133);
+}
+thead{
+    text-align: center;
+    background-color: rgb(245, 244, 244)
+    ;
+    height: 40px;
+}
+thead th{
+    color: black;
+    font-size: medium;
+}
+tbody{
+    text-align: center;
+    height: 50px;
+    background-color: antiquewhite;
+}
+
+.btn{
+    background-color:blueviolet;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin:  4px;
+    border-radius: 10%;
+}
+.btn-warning{
+    background-color: yellowgreen;
+}
+.btn-primary{
+    background-color: red;
+}
+
+
+/*  <=================== end body page ==============>  */ 
+
+
+/*  <=================== create page ==============>  */ 
+.back-button{
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 25px;
+}
+.btn-submit{
+    border: none;
+    background-color: blue;
+    padding: 12px;
+    color: white;
+    border-radius: 8%;
+}
+.back-button a{
+    padding: 10px;
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 8%;
+    
+}
+.back-button a:hover{
+    background-color: black;
+    padding: 15px;
+    
+}
+.container-create
+{
+    box-shadow: 1px 2px 3px black;
+    margin: 25px 50px;
+}
+.container-create-heading{
+    text-align: center;
+}
+.container-create-heading h1{
+    margin: 35px;
+    padding: 20px;
+    background: rgb(238, 238, 238);
+}
+.container-create-links{
+    display: flex;
+    justify-content:left;
+    gap: 20px;
+    margin: 15px 0;
+
+}
+.container-create-links label{
+    background: rgb(238, 238, 238);
+    margin-left: 35px;
+    padding: 18px;
+    width: 10%;
+    text-align: center;
+}
+.container-create-links input{
+    width: 80%;
+    padding: 18px;
+    border: none;
+    background: rgb(238, 238, 238);
+    margin-right: 35px;
+}
+
+.container-create-links select{
+    width: 80%;
+    padding: 18px;
+    border: none;
+    margin-right: 35px;
+    background: rgb(238, 238, 238);
+}
+.container-create-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0px 35px 35px;
+}
+.delete-btn{
+    padding: 10px;
+    background-color: red;
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 8%;
+    margin-top: 5px;
+}
+
+/*  <=================== end create page ==============>  */ 
+
