@@ -2,6 +2,10 @@
     <div class="container-add-button">
         <a href="{{ route('crud.create') }}" class="add_player">Add Player</a>
     </div>
+    <div class="search-bar ">
+        <input type="text" name="search" id="search" placeholder="Search Here..">
+    </div>
+
 
     <div class="container-body-content">
 
@@ -18,11 +22,13 @@
                     <th style="padding: 0 100px;">Actions</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="allData">
+               
 
                 @foreach($items as $item)
-               
-                <tr>
+
+               </tr>
+                <tr >
                     <td>{{$item->id}}</td>
                     <td>{{$item->name}}</td>
                     <td>{{$item->club}}</td>
@@ -46,6 +52,8 @@
                 </tr>
                 @endforeach
             </tbody>
+            <tbody class="searchData">
+            </tbody>
         </table>
     </div>
 </div>
@@ -53,6 +61,29 @@
 <script>
 
 
+    $('#search').on('keyup',function(event){
+        event.preventDefault();
+
+        let data = $(this).val();
+        if(data){
+            $('.allData').hide();
+            $('.searchData').show();
+        }
+        else{
+            $('.allData').show();
+            $('.searchData').hide();
+        }
+        let url = "{{ route('search') }}"
+
+        $.ajax({
+            type: 'get',
+            url : url, 
+            data: {'search': data},
+            success: function(response){
+                $('.searchData').html(response); 
+            }
+        })
+    });
 
 
 

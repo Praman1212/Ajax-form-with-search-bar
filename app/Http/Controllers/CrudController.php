@@ -19,7 +19,6 @@ class CrudController extends Controller
     {
         $items = Crud::all();
         return view('index', compact('items'));
-
     }
     public function create()
     {
@@ -57,7 +56,7 @@ class CrudController extends Controller
         return response()->json(
             [
                 'data' => $partialView,
-                'url' =>  route('crud.show',$item->id)
+                'url' =>  route('crud.show', $item->id)
             ]
         );
     }
@@ -105,7 +104,37 @@ class CrudController extends Controller
             ]
         );
     }
-    public function search(){
-        return 'muji';
+    public function search(Request $request)
+    {
+        $output = '';
+        $search = Crud::where('id', 'Like', '%' . $request->search . '%')
+            ->orWhere('name', 'Like', '%' . $request->search . '%')
+            ->orWhere('club', 'Like', '%' . $request->search . '%')
+            ->orWhere('country', 'Like', '%' . $request->search . '%')
+            ->orWhere('is_retired', 'Like', '%' . $request->search . '%')
+            ->orWhere('image', 'Like', '%' . $request->search . '%')
+            ->orWhere('goal_number', 'Like', '%' . $request->search . '%')
+            ->get();
+
+        foreach ($search as $search) {
+            $status = $search->is_retired ? 'Retired' : 'Not retired';
+            $imagePath = $search->image ? $search->image : 'path/to/placeholder.jpg';
+
+
+            $output .=
+                '<tr>
+                    <td>' . $search->id . '</td>
+                    <td> ' . $search->name . '</td>
+                    <td> ' . $search->club . '</td>
+                    <td> ' . $search->country . '</td>
+                    <td>' . $status . '</td>
+                    <td><img src="' . $imagePath . '" style="width:100px;height:auto;"></td>
+                    <td> ' . $search->goal_number . '</td>
+                    
+
+                </tr>';
+        }
+
+        return response($output);
     }
 }

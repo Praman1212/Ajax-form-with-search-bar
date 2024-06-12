@@ -19,8 +19,8 @@ Route::resource('crud', CrudController::class);
 
 Route::resource('coach',CoachController::class);
 
-Route::get('/search',[CrudController::class,'search']);
+Route::get('/search',[CrudController::class,'search'])->name('search');
 
-// Route::get('/partialView',[CrudController::class,'partialIndex'])->name('partialView');
+
 
 
